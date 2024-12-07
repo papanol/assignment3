@@ -20,11 +20,10 @@ phases:
       - docker tag assignment-3:latest 112547104148.dkr.ecr.us-east-1.amazonaws.com/assignment-3:latest
   post_build:
     commands:
-      - echo Pushing the Docker image to Amazon ECR...
+      - echo Pushing Docker image to Amazon ECR...
       - docker push 112547104148.dkr.ecr.us-east-1.amazonaws.com/assignment-3:latest
       - echo Creating imagedefinitions.json file for ECS deployment...
-      - echo '[{"name":"container_name","imageUri":"112547104148.dkr.ecr.us-east-1.amazonaws.com/assignment-3:latest"}]' > imagedefinitions.json
+      - echo '[{"name":"lamptey-app3","imageUri":"112547104148.dkr.ecr.us-east-1.amazonaws.com/assignment-3:latest"}]' > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
-
